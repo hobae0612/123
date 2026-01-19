@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>CHALLENGE QUIZ</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="retro-bg">
+
+<header class="top-bar">
+  <button class="retro-btn" onclick="location.href='index.html'">🏠 HOME</button>
+</header>
+
+<div class="game-container">
+
+  <div class="video-box">
+    <iframe
+      id="video"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="quiz-box">
+    <p id="question"></p>
+
+    <div class="btn-row">
+      <button class="retro-btn" onclick="prevQuestion()">◀ 이전</button>
+      <button class="retro-btn" onclick="checkAnswer()">정답</button>
+      <button class="retro-btn" onclick="nextQuestion()">다음 ▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- 정답 팝업 -->
+<div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <p id="popup-text"></p>
+    <button class="retro-btn" onclick="closePopup()">확인</button>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/drama.js"></script>
+</body>
+</html>

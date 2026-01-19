@@ -1,0 +1,53 @@
+/* 16:9 프레임 + object-fit: cover가 핵심 */
+.image-frame{
+  position: relative;
+  margin: 0 14px 14px;
+  border-radius: var(--radius2);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: var(--shadow2);
+  background: rgba(0,0,0,0.25);
+
+  /* ✅ 항상 16:9 유지 */
+  aspect-ratio: 16 / 9;
+
+  cursor: zoom-in;
+}
+
+.image-frame img{
+  width: 100%;
+  height: 100%;
+  display:block;
+
+  /* ✅ 작은 이미지는 확대, 큰 이미지는 잘라서 16:9 채움 */
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-overlay{
+  position:absolute;
+  left:14px; bottom:14px;
+  pointer-events:none;
+}
+
+.zoom-frame{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+}
+
+.zoom-frame img{
+  width: 100%;
+  height: 100%;
+  display:block;
+  object-fit: contain; /* 확대 팝업에서는 전체가 보이게 */
+  background: rgba(0,0,0,0.35);
+}
+
+/* 확대 모달은 좀 더 넓게 */
+.modal-wide{
+  width: min(820px, calc(100vw - 48px));
+}

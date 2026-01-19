@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>챌린지 퀴즈</title>
+  <link rel="stylesheet" href="css/challenge.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span>QUIZ SHOW</span>
+  </div>
+
+  <div class="status">
+    <span id="progressText">1 / 1</span>
+  </div>
+</header>
+
+<main class="layout">
+  <!-- 좌측 영상 -->
+  <section class="video-card">
+    <div class="video-header">
+      <div class="badge">CHALLENGE</div>
+      <div class="title" id="questionTitle">문제</div>
+    </div>
+
+    <div class="video-frame">
+      <video id="video" controls muted playsinline loop autoplay></video>
+      <div class="video-overlay">
+        <!-- <div class="overlay-chip">영상 확인</div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 우측 컨트롤 -->
+  <aside class="panel">
+    <div class="panel-card">
+      <button id="hintBtn" class="btn btn-primary">
+        <span class="btn-ic">💡</span> 힌트
+        <span class="btn-sub">단서 보기</span>
+      </button>
+
+      <button id="answerBtn" class="btn btn-accent">
+        <span class="btn-ic">✅</span> 정답
+        <span class="btn-sub">답 공개</span>
+      </button>
+
+      <div class="nav-row">
+        <button id="prevBtn" class="btn btn-ghost">
+          ◀ 이전
+        </button>
+        <button id="nextBtn" class="btn btn-ghost">
+          다음 ▶
+        </button>
+      </div>
+
+      <a href="index.html" class="btn btn-home" id="homeBtn">
+        ⟵ 처음으로 돌아가기
+      </a>
+    </div>
+
+    <div class="panel-foot">
+      <div class="mini"></div>
+    </div>
+  </aside>
+</main>
+
+<!-- 힌트 팝업 -->
+<div id="hintModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div class="modal-title">💡 힌트</div>
+      <button class="icon-btn" data-close="hintModal" aria-label="닫기">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="hintText"></p>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" data-close="hintModal">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 정답 팝업 -->
+<div id="answerModal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div class="modal-title">✅ 정답</div>
+      <button class="icon-btn" data-close="answerModal" aria-label="닫기">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="answerText"></p>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" data-close="answerModal">닫기</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/challenge.js"></script>
+</body>
+</html>

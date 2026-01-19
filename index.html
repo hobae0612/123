@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>퀴즈쇼</title>
+
+  <!-- challenge.css 재사용 -->
+  <link rel="stylesheet" href="css/challenge.css" />
+
+  <!-- index 전용 보정(필요한 것만) -->
+  <style>
+    .home-wrap{
+      min-height: calc(100vh - 76px);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding: 0 26px 40px;
+    }
+    .home-card{
+      width: min(520px, 92vw);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.03));
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 22px;
+    }
+    .home-title{
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.6px;
+      opacity: 0.95;
+    }
+    .home-sub{
+      margin: 10px 0 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .menu-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .btn.big{
+      padding: 16px 14px;
+    }
+    .btn .right{
+      opacity: .9;
+      font-weight: 800;
+    }
+    .chips{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .chip{
+      font-size: 12px;
+      color: rgba(255,255,255,0.86);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <span>QUIZ SHOW</span>
+  </div>
+
+  <div class="status">
+    <span>SELECT MODE</span>
+  </div>
+</header>
+
+<main class="home-wrap">
+  <section class="home-card">
+    <h1 class="home-title">퀴즈쇼</h1>
+    <p class="home-sub">
+      카테고리를 선택하면 바로 퀴즈가 시작됩니다.<br/>
+      로컬 영상(mp4) 기반이라 현장 진행에도 안정적이에요.
+    </p>
+
+    <div class="menu-grid">
+      <a class="btn btn-primary big" href="challenge.html" data-press>
+        <span style="display:flex;align-items:center;gap:10px;">
+          <span class="btn-ic">⚡</span> 챌린지
+        </span>
+        <span class="right">START ▶</span>
+      </a>
+
+      <a class="btn btn-accent big" href="drama.html" data-press>
+        <span style="display:flex;align-items:center;gap:10px;">
+          <span class="btn-ic">🎬</span> 드라마
+        </span>
+        <span class="right">START ▶</span>
+      </a>
+
+      <a class="btn big" href="animation.html" data-press
+         style="border-color: rgba(32,201,151,0.35);
+                background: linear-gradient(180deg, rgba(32,201,151,0.20), rgba(255,255,255,0.04));">
+        <span style="display:flex;align-items:center;gap:10px;">
+          <span class="btn-ic">🐉</span> 애니메이션
+        </span>
+        <span class="right">START ▶</span>
+      </a>
+    </div>
+
+    <div class="chips">
+      <span class="chip">💡 힌트/정답 팝업</span>
+      <span class="chip">⟲ 이전/다음</span>
+      <span class="chip">🎞 로컬 MP4</span>
+    </div>
+  </section>
+</main>
+
+<script>
+  // 버튼 클릭시 살짝 튀는 액션(링크에도 적용)
+  function pressFx(el){
+    el.animate(
+      [
+        { transform: "translateY(-2px) scale(1)" },
+        { transform: "translateY(0px) scale(0.98)" },
+        { transform: "translateY(-2px) scale(1)" }
+      ],
+      { duration: 180, easing: "ease-out" }
+    );
+  }
+
+  document.querySelectorAll("[data-press]").forEach(el => {
+    el.addEventListener("click", () => pressFx(el));
+  });
+</script>
+
+</body>
+</html>
