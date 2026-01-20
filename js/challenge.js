@@ -21,7 +21,7 @@ const quizzes = [
     {
         video: "video/묵찌빠.mp4",
         hint: "가위바위보로 눈물콧물빼기",
-        answer: "묵찌빠 \n진행자를 이겨라",
+        answer: "묵찌빠 \n 진행자를 이겨라",
         title: "🔥 이 영상 속 챌린지의 이름은?"
     },
     {

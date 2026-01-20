@@ -22,7 +22,7 @@ const quizzes = [
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
     image: "images/그대들은어떻게.jpg",
     hint: "미야자키 하야오 최신작",
-    answer: "그대들은 어떻게 살 것인가"
+    answer: "그대들은 \n 어떻게 살 것인가"
   },
   {
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
@@ -34,7 +34,7 @@ const quizzes = [
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
     image: "images/나히아.jpg",
     hint: "#히어로 #학교 #올마이트 #원포올 #빌런연합",
-    answer: "나의 히어로 아카데미아"
+    answer: "나의 히어로 \n 아카데미아"
   },
   {
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
@@ -46,7 +46,7 @@ const quizzes = [
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
     image: "images/하늘음식.webp",
     hint: "#하늘 #음식",
-    answer: "하늘에서 음식이 내린다면"
+    answer: "하늘에서 \n 음식이 내린다면"
   },
   {
     title: "이 캐릭터가 나오는 작품은 무엇일까요?",
