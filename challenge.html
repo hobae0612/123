@@ -13,27 +13,31 @@
     <span class="dot"></span>
     <span>조치원성결교회 청년부겨울MT</span>
   </div>
-
-  <div class="status">
-    <span id="progressText">1 / 1</span>
-  </div>
 </header>
 
 <main class="layout">
   <!-- 좌측 영상 -->
-  <section class="video-card">
-    <div class="video-header">
+<section class="video-card">
+  <div class="video-header">
+
+    <!-- ✅ 윗줄: CHALLENGE + 진행표시 -->
+    <div class="header-row">
       <div class="badge">CHALLENGE</div>
-      <div class="title" id="questionTitle">문제</div>
+      <span id="progressBadge" class="progress-badge">1 / 15</span>
     </div>
 
-    <div class="video-frame">
-      <video id="video" controls muted playsinline loop autoplay></video>
-      <div class="video-overlay">
-        <!-- <div class="overlay-chip">영상 확인</div> -->
-      </div>
+    <!-- ✅ 아랫줄: 질문 -->
+    <div class="title" id="questionTitle">
+      🔥 이 영상 속 챌린지의 이름은?
     </div>
-  </section>
+
+  </div>
+
+  <div class="video-frame">
+    <video id="video" controls playsinline loop></video>
+    <div class="video-overlay"></div>
+  </div>
+</section>
 
   <!-- 우측 컨트롤 -->
   <aside class="panel">
@@ -61,7 +65,16 @@
         ⟵ 처음으로 돌아가기
       </a>
     </div>
-
+<!-- ✅ 게임룰 카드 (처음으로 돌아가기 아래) -->
+<div class="rule-card" id="ruleCard">
+  <div class="rule-head">
+    <span class="rule-ic">📜</span>
+    <span class="rule-title">정답 인정 포인트</span>
+  </div>
+  <div class="rule-body" id="ruleText">
+    <!-- JS가 여기에 문제별 룰을 넣어줌 -->
+  </div>
+</div>
     <div class="panel-foot">
       <div class="mini"></div>
     </div>
@@ -88,16 +101,22 @@
 <!-- 정답 팝업 -->
 <div id="answerModal" class="modal" aria-hidden="true">
   <div class="modal-backdrop"></div>
+
   <div class="modal-dialog" role="dialog" aria-modal="true">
     <div class="modal-head">
       <div class="modal-title">✅ 정답</div>
-      <button class="icon-btn" data-close="answerModal" aria-label="닫기">✕</button>
+
+      <!-- X 버튼: data-close="answerModal" -->
+      <button type="button" class="icon-btn" data-close="answerModal" aria-label="닫기">✕</button>
     </div>
+
     <div class="modal-body">
       <p id="answerText"></p>
     </div>
+
     <div class="modal-actions">
-      <button class="btn btn-ghost" data-close="answerModal">닫기</button>
+      <!-- 닫기 버튼: data-close="answerModal" -->
+      <button type="button" class="btn btn-ghost" data-close="answerModal">닫기</button>
     </div>
   </div>
 </div>
