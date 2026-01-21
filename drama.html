@@ -1,46 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8" />
-<title>CHALLENGE QUIZ</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>드라마 퀴즈</title>
+  <link rel="stylesheet" href="css/challenge.css" />
+  <link rel="stylesheet" href="css/drama.css" />
 </head>
-<body class="retro-bg">
 
-<header class="top-bar">
-  <button class="retro-btn" onclick="location.href='index.html'">🏠 HOME</button>
-</header>
+<body>
 
-<div class="game-container">
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>조치원성결교회<br>늘품청년부겨울MT</span>
+    </div>
 
-  <div class="video-box">
-    <iframe
-      id="video"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <div class="status">
+      <span id="progressText">1 / 1</span>
+    </div>
+  </header>
 
-  <div class="quiz-box">
-    <p id="question"></p>
+  <main class="layout">
+    <!-- 좌측: 16:9 가로 영상 -->
+    <section class="video-card">
+      <div class="video-header">
+        <div class="badge">DRAMA</div>
+        <div class="title" id="questionTitle">문제</div>
+      </div>
 
-    <div class="btn-row">
-      <button class="retro-btn" onclick="prevQuestion()">◀ 이전</button>
-      <button class="retro-btn" onclick="checkAnswer()">정답</button>
-      <button class="retro-btn" onclick="nextQuestion()">다음 ▶</button>
+      <div class="wide-video-frame">
+        <video id="video" controls playsinline preload="metadata"></video>
+        <div class="video-overlay">
+          <!-- <div class="overlay-chip">16:9 가로 영상</div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 우측 컨트롤 -->
+    <aside class="panel">
+      <div class="panel-card">
+        <button id="hintBtn" class="btn btn-primary">
+          <span class="btn-ic">💡</span> 힌트
+          <span class="btn-sub">단서 보기</span>
+        </button>
+
+        <button id="answerBtn" class="btn btn-accent">
+          <span class="btn-ic">✅</span> 정답
+          <span class="btn-sub">드라마 제목</span>
+        </button>
+
+        <button id="lineBtn" class="btn btn-accent">
+          <span class="btn-ic">🎭</span> 대사보기
+          <span class="btn-sub">연기 타임</span>
+        </button>
+
+        <div class="nav-row">
+          <button id="prevBtn" class="btn btn-ghost">◀ 이전</button>
+          <button id="nextBtn" class="btn btn-ghost">다음 ▶</button>
+        </div>
+
+        <a href="index.html" class="btn btn-home">⟵ 처음으로 돌아가기</a>
+      </div>
+
+      <div class="panel-foot">
+        <div class="mini">TIP: 문제마다 시작 구간/반복 구간을 지정할 수 있어요</div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 힌트 팝업 -->
+  <div id="hintModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title">💡 힌트</div>
+        <button class="icon-btn" data-close="hintModal" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="hintText"></p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="hintModal">닫기</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- 정답 팝업 -->
-<div id="popup" class="popup hidden">
-  <div class="popup-content">
-    <p id="popup-text"></p>
-    <button class="retro-btn" onclick="closePopup()">확인</button>
+  <!-- 정답 팝업 -->
+  <div id="answerModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title">✅ 정답</div>
+        <button class="icon-btn" data-close="answerModal" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="answerText"></p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="answerModal">닫기</button>
+      </div>
+    </div>
   </div>
-</div>
-
-<script src="js/common.js"></script>
-<script src="js/drama.js"></script>
+  <!-- 대사 팝업 -->
+  <div id="lineModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title">🎭 대사</div>
+        <button class="icon-btn" data-close="lineModal" aria-label="닫기">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="lineText"></p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="lineModal">닫기</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/drama.js"></script>
 </body>
+
 </html>

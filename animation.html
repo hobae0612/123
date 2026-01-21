@@ -1,123 +1,131 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>애니메이션 퀴즈</title>
-  <link rel="stylesheet" href="css/challenge.css" />
+
+  <!-- 너가 이미 쓰는 공통 스타일이 있으면 그걸로 바꿔도 됨 -->
   <link rel="stylesheet" href="css/animation.css" />
 </head>
 
 <body>
+  <main class="wrap">
 
-<header class="topbar">
-  <div class="brand">
-    <span class="dot"></span>
-    <span>조치원성결교회 청년부겨울MT</span>
-  </div>
+    <!-- 좌측 카드 (미디어) -->
+    <section class="card left">
+      <header class="card-head">
+        <span class="pill">ANIMATION</span>
+        <div id="questionTitle" class="q-title">문제</div>
+      </header>
 
-  <div class="status">
-    <span id="progressText">1 / 1</span>
-  </div>
-</header>
-
-<main class="layout">
-  <!-- 좌측 이미지 -->
-  <section class="video-card">
-    <div class="video-header">
-      <div class="badge">ANIMATION</div>
-      <div class="title" id="questionTitle">문제</div>
-    </div>
-
-    <!-- 16:9 이미지 프레임 -->
-    <div class="image-frame" id="imageFrame" role="button" aria-label="이미지 확대">
-      <img id="quizImage" alt="퀴즈 이미지" />
-      <div class="image-overlay">
-        <div class="overlay-chip">클릭하면 확대</div>
+      <!-- ✅ 16:9 프레임: 안에 img/video 둘 다 넣고 JS로 토글 -->
+      <div class="media-frame" id="mediaFrame">
+        <img id="quizImage" alt="quiz image" />
+        <video id="quizVideo" controls playsinline preload="metadata"></video>
       </div>
-    </div>
-  </section>
 
-  <!-- 우측 컨트롤 -->
-  <aside class="panel">
-    <div class="panel-card">
-      <button id="hintBtn" class="btn btn-primary">
-        <span class="btn-ic">💡</span> 힌트
+      <div class="meta">
+        <span id="progressText" class="progress">1 / 1</span>
+      </div>
+    </section>
+
+    <!-- 우측 패널 (버튼) -->
+    <aside class="panel">
+      <button id="hintBtn" class="btn btn-wide">
+        <span class="btn-ico">💡</span>
+        <span class="btn-main">힌트</span>
         <span class="btn-sub">단서 보기</span>
       </button>
 
-      <button id="answerBtn" class="btn btn-accent">
-        <span class="btn-ic">✅</span> 정답
-        <span class="btn-sub">답 공개</span>
+      <button id="answerBtn" class="btn btn-wide purple">
+        <span class="btn-ico">✅</span>
+        <span class="btn-main">정답</span>
+        <span class="btn-sub">작품/캐릭터</span>
+      </button>
+      <button id="lineBtn" class="btn btn-wide purple">
+        <span class="btn-ico">🎭</span>
+        <span class="btn-main">대사보기</span>
+        <span class="btn-sub">연기 타임</span>
       </button>
 
-      <div class="nav-row">
-        <button id="prevBtn" class="btn btn-ghost">◀ 이전</button>
-        <button id="nextBtn" class="btn btn-ghost">다음 ▶</button>
+      <div class="row">
+        <button id="prevBtn" class="btn" type="button">◀ 이전</button>
+        <button id="nextBtn" class="btn" type="button">다음 ▶</button>
       </div>
 
-      <a href="index.html" class="btn btn-home" id="homeBtn">⟵ 처음으로 돌아가기</a>
-    </div>
+      <a class="btn btn-home" href="index.html">← 처음으로 돌아가기</a>
 
-    <div class="panel-foot">
-      <div class="mini">TIP: 이미지를 클릭하면 크게 볼 수 있어요</div>
-    </div>
-  </aside>
-</main>
+      <p class="tip">TIP: 이미지/영상 문제를 섞어서 배열에 추가하면 자동으로 표시돼요.</p>
+    </aside>
 
-<!-- 힌트 팝업 -->
-<div id="hintModal" class="modal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <div class="modal-dialog" role="dialog" aria-modal="true">
-    <div class="modal-head">
-      <div class="modal-title">💡 힌트</div>
-      <button class="icon-btn" data-close="hintModal" aria-label="닫기">✕</button>
-    </div>
-    <div class="modal-body">
-      <p id="hintText"></p>
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" data-close="hintModal">닫기</button>
-    </div>
-  </div>
-</div>
+  </main>
 
-<!-- 정답 팝업 -->
-<div id="answerModal" class="modal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <div class="modal-dialog" role="dialog" aria-modal="true">
-    <div class="modal-head">
-      <div class="modal-title">✅ 정답</div>
-      <button class="icon-btn" data-close="answerModal" aria-label="닫기">✕</button>
-    </div>
-    <div class="modal-body">
-      <p id="answerText"></p>
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" data-close="answerModal">닫기</button>
-    </div>
-  </div>
-</div>
-
-<!-- 이미지 확대 팝업 -->
-<div id="imageModal" class="modal" aria-hidden="true">
-  <div class="modal-backdrop"></div>
-  <div class="modal-dialog modal-wide" role="dialog" aria-modal="true">
-    <div class="modal-head">
-      <div class="modal-title">🖼 이미지 확대</div>
-      <button class="icon-btn" data-close="imageModal" aria-label="닫기">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="zoom-frame">
-        <img id="zoomImage" alt="확대 이미지" />
+  <!-- =======================
+       HINT MODAL
+  ======================== -->
+  <div id="hintModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title">💡 힌트</div>
+        <button class="x" data-close="hintModal" aria-label="close">✕</button>
       </div>
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" data-close="imageModal">닫기</button>
+      <div id="hintText" class="modal-body"></div>
+      <button class="modal-close" data-close="hintModal">닫기</button>
     </div>
   </div>
-</div>
 
-<script src="js/animation.js"></script>
+  <!-- =======================
+       ANSWER MODAL
+  ======================== -->
+  <div id="answerModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title">✅ 정답</div>
+        <button class="x" data-close="answerModal" aria-label="close">✕</button>
+      </div>
+      <div id="answerText" class="modal-body"></div>
+      <button class="modal-close" data-close="answerModal">닫기</button>
+    </div>
+  </div>
+  <!-- =======================
+     LINE MODAL (대사)
+======================== -->
+  <div id="lineModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title">🎭 대사</div>
+        <button class="x" data-close="lineModal" aria-label="close">✕</button>
+      </div>
+      <div id="lineText" class="modal-body"></div>
+      <button class="modal-close" data-close="lineModal">닫기</button>
+    </div>
+  </div>
+
+  <!-- =======================
+       IMAGE ZOOM MODAL
+  ======================== -->
+  <div id="imageModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-box modal-image">
+      <div class="modal-head">
+        <div class="modal-title">🖼 이미지 확대</div>
+        <button class="x" data-close="imageModal" aria-label="close">✕</button>
+      </div>
+
+      <div class="zoom-wrap">
+        <img id="zoomImg" alt="zoom image" />
+      </div>
+
+      <button class="modal-close" data-close="imageModal">닫기</button>
+    </div>
+  </div>
+
+  <script src="js/animation.js"></script>
 </body>
+
 </html>

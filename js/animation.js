@@ -1,107 +1,160 @@
-// ✅ 여기 배열만 수정하면 문제 추가/삭제가 끝
+/* =========================
+   ANIMATION QUIZ (IMAGE + VIDEO)
+   - 문제 배열만 수정하면 추가/삭제 끝
+   - type: "image" | "video"
+   - 이미지: 16:9 프레임에 강제 맞춤 (object-fit: cover)
+   - 영상: 16:9 프레임에 맞춤 (contain 추천)
+   - 이미지 클릭 시 확대 모달
+   - 힌트/정답 모달
+   - (선택) 영상 start/end 구간 반복
+   ========================= */
+
 const quizzes = [
+  // ✅ 이미지 문제 예시
   {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/체인소맨.jpeg",
-    hint: "#요네즈캔시 #악마사냥꾼 #공안4과 #유사가족 #IRISOUT",
-    answer: "체인소맨"
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/도라에몽.webp",
+    hint: "대나무헬리콥터!",
+    answer: "도라에몽",
+    line: "대나무헬리콥터!"
   },
   {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/프리랜.webp",
-    hint: "🧝‍♀️ (엘프) 🕰️ (시간/시계) 📦 (상자) 🪄 (지팡이)",
-    answer: "장송의 프리랜"
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/디지몬.png",
+    hint: "아구몬",
+    answer: "디지몬어드벤처",
+    line: "태일아!<br>진화시켜줘!<br>태일아!"
   },
   {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/진격의거인.jpg",
-    hint: "거인",
-    answer: "진격의거인"
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/로켓단.jfif",
+    hint: "어른되고 보니 얘네가 주인공",
+    answer: "포켓몬스터",
+    line: "대체 정체가 무엇이야라고 물으신다면<br>대답해드리는 게 인지상정<br>이 세계의 파괴를 막기위해<br>이 세계의 평화를 지키기 위해<br>사랑과 진실, 어둠을 뿌리고 다니는<br>포켓몬의 감초, 귀염둥이 악당<br>나, 로사 나, 로이 난 나옹이다옹!"
   },
   {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/그대들은어떻게.jpg",
-    hint: "미야자키 하야오 최신작",
-    answer: "그대들은 \n 어떻게 살 것인가"
+    type: "video",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(노래까지 불러야 정답으로 인정)",
+    src: "video/뽀로로.mp4",
+    poster: "images/뽀로로.webp", // 없으면 생략 가능
+    volume: 0.5,
+    start: 2.0,   // 선택
+    end: 40.0,     // 선택 (있으면 그 구간 반복)
+    hint: "노는게 좋다고 했지<br>공부 못한다고는 안함",
+    answer: "뽀롱뽀롱 뽀로로"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/앨리오.jpg",
-    hint: "픽사, ㅇㄹ오",
-    answer: "엘리오"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/스즈메.webp",
+    hint: "스즈메의 어디로든 문",
+    answer: "스즈메의 문단속",
+    line: "스즈메!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/나히아.jpg",
-    hint: "#히어로 #학교 #올마이트 #원포올 #빌런연합",
-    answer: "나의 히어로 \n 아카데미아"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/아따아따.jpg",
+    hint: "아뜨! 아뜨!",
+    answer: "아따아따",
+    line: "단비꺼어어어!!!!!!!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/하이큐.jpg",
-    hint: "#배구 #코트위의제왕 #리베로 #히나타쇼요",
-    answer: "하이큐"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/원피스.webp",
+    hint: "김종민 인생곡",
+    answer: "원피스",
+    line: "제ー하하하하하하하하하ー!!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/하늘음식.webp",
-    hint: "#하늘 #음식",
-    answer: "하늘에서 \n 음식이 내린다면"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/이누야샤.jpg",
+    hint: "퇴사 짤",
+    answer: "이누야샤",
+    line: "안녕히 계세요 여러분.<br>저는 이 세상의 모든 굴레와 속박을 벗어던지고<br>제 행복을 찾아 떠납니다.<br>여러분도 행복하세요!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/케이온.jfif",
-    hint: "#여고생밴드 #경음악부 #깁슨레스폴 #응땅",
-    answer: "케이온"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/젠이츠.jpg",
+    hint: "번개의호흡",
+    answer: "귀멸의 칼날",
+    line: "카미나리노코큐<br>이치노카타<br>헤키레키잇센!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/몬스터주식회사.jpg",
-    hint: "#벽장문 #비명소리 #부 #설리반 #외눈박이 ",
-    answer: "몬스터주식회사"
+    {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/주술회전.jpg",
+    hint: "이마데모 아오가 슨데이루",
+    answer: "주술회전",
+    line: "료이키텐카이"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/샤먼킹.jpg",
-    hint: "#주황색 헤드폰 #사무리아 #오버소울 #안나 #프린세스하오",
-    answer: "샤먼킹"
+    {
+    type: "video",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(노래까지 불러야 정답으로 인정)",
+    src: "video/쾌걸근육맨.mp4",
+    poster: "images/쾌걸근육맨.jpg", // 없으면 생략 가능
+    volume: 0.5,
+    start: 3.0,   // 선택
+    end: 36.0,     // 선택 (있으면 그 구간 반복)
+    hint: "갈비찜을 밥위에 얹어주세요~",
+    answer: "쾌걸 근육맨 2세"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/달려라하니.webp",
-    hint: "#달리기 #홍두깨 1988",
-    answer: "달려라하니"
+      {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/타마마.jpg",
+    hint: "타마마는 남성",
+    answer: "개구리 중사 케로로",
+    line: "타마마 임팩트!!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/일곱개의대죄.png",
-    hint: "#호크 #엘리자베스 #마신족 #에스카노르 #7명의기사",
-    answer: "일곱개의대죄"
+      {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/탄지로.jpg",
+    hint: "꺽쇠 까마귀",
+    answer: "귀멸의 칼날",
+    line: "탄지로! 탄지로!<br> 쯔기노 바쇼와 <br> 남남동!! 남남동!!"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/스파이패밀리.jpg",
-    hint: "#와쿠와쿠 #아냐포저 #초능력자 #황혼 #가시공주",
-    answer: "스파이패밀리"
+      {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/핑구.webp",
+    hint: "바다사자 트라우마",
+    answer: "꼬마펭귄 핑구",
+    line: "Noot Noot"
   },
-  {
-    title: "이 캐릭터가 나오는 작품은 무엇일까요?",
-    image: "images/핑구.webp",
-    hint: "#펭귄 #눗눗 #이글루 #클레이애니메이션 #바다코끼리",
-    answer: "핑구"
+      {
+    type: "image",
+    title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
+    src: "images/흰둥이.webp",
+    hint: "수컷입니다. 귀여워해 주세요.",
+    answer: "짱구는 못말려",
+    line: "왕왕왕"
   },
-  
 ];
 
 let index = 0;
 
-// DOM
-const progressText = document.getElementById("progressText");
-const questionTitle = document.getElementById("questionTitle");
+// loop
+let loopStart = 0;
+let loopEnd = Infinity;
 
-const quizImage = document.getElementById("quizImage");
-const zoomImage = document.getElementById("zoomImage");
-const imageFrame = document.getElementById("imageFrame");
+// 첫 재생에서만 start로 점프(포스터 유지용)
+let didSeekOnPlay = false;
+
+// DOM
+const questionTitle = document.getElementById("questionTitle");
+const progressText = document.getElementById("progressText");
+
+const frame = document.getElementById("mediaFrame");
+const img = document.getElementById("quizImage");
+const video = document.getElementById("quizVideo");
 
 const hintBtn = document.getElementById("hintBtn");
 const answerBtn = document.getElementById("answerBtn");
@@ -111,36 +164,19 @@ const nextBtn = document.getElementById("nextBtn");
 const hintModal = document.getElementById("hintModal");
 const answerModal = document.getElementById("answerModal");
 const imageModal = document.getElementById("imageModal");
-
 const hintText = document.getElementById("hintText");
 const answerText = document.getElementById("answerText");
+const zoomImg = document.getElementById("zoomImg");
+const lineBtn = document.getElementById("lineBtn");
+const lineModal = document.getElementById("lineModal");
+const lineText = document.getElementById("lineText");
 
-// 렌더
-function loadQuiz() {
-  const q = quizzes[index];
-
-  questionTitle.textContent = q.title;
-  progressText.textContent = `${index + 1} / ${quizzes.length}`;
-
-  // 이미지 변경
-  quizImage.src = q.image;
-  quizImage.alt = q.title;
-
-  // 확대 이미지도 동기화 (미리 지정)
-  zoomImage.src = q.image;
-  zoomImage.alt = q.title;
-
-  // 네비 버튼 상태
-  setDisabled(prevBtn, index === 0);
-  setDisabled(nextBtn, index === quizzes.length - 1);
-}
-
+// ---------- helpers ----------
 function setDisabled(btn, disabled) {
   btn.disabled = disabled;
   btn.classList.toggle("is-disabled", disabled);
 }
 
-// 모달 열기/닫기
 function openModal(modalEl) {
   modalEl.classList.add("is-open");
   modalEl.setAttribute("aria-hidden", "false");
@@ -150,51 +186,142 @@ function closeModal(modalEl) {
   modalEl.setAttribute("aria-hidden", "true");
 }
 
-// 공통 닫기(버튼, 배경 클릭)
+// 공통 닫기
 document.addEventListener("click", (e) => {
-  const closeTarget = e.target.getAttribute?.("data-close");
+  const closeTarget = e.target?.getAttribute?.("data-close");
   if (closeTarget) {
     const m = document.getElementById(closeTarget);
     if (m) closeModal(m);
   }
-
-  if (e.target.classList?.contains("modal-backdrop")) {
+  if (e.target?.classList?.contains("modal-backdrop")) {
     const modal = e.target.closest(".modal");
     if (modal) closeModal(modal);
   }
 });
-
-// ESC 닫기
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal(hintModal);
     closeModal(answerModal);
     closeModal(imageModal);
+    closeModal(lineModal);
   }
 });
 
-// 버튼 액션 (살짝 튀는 느낌)
-function pressFx(el){
+// 버튼 액션
+function pressFx(el) {
   el.animate(
     [
       { transform: "translateY(-2px) scale(1)" },
       { transform: "translateY(0px) scale(0.98)" },
-      { transform: "translateY(-2px) scale(1)" }
+      { transform: "translateY(-2px) scale(1)" },
     ],
     { duration: 180, easing: "ease-out" }
   );
 }
+lineBtn.addEventListener("click", () => {
+  pressFx(lineBtn);
+  const q = quizzes[index];
 
-// 이벤트
+  lineText.innerHTML =
+    (q.line && String(q.line).trim().length > 0)
+      ? q.line
+      : "대사가 등록되지 않았어요.";
+
+  openModal(lineModal);
+});
+// ---------- video loop ----------
+function handleLoop() {
+  if (!Number.isFinite(loopEnd)) return;
+  if (video.currentTime >= loopEnd) {
+    video.currentTime = loopStart;
+    video.play().catch(() => {});
+  }
+}
+video.addEventListener("timeupdate", handleLoop);
+
+video.addEventListener("loadeddata", () => {
+  didSeekOnPlay = false;
+});
+
+video.addEventListener("play", () => {
+  // 포스터 유지 위해: 로드 시점에는 currentTime 건드리지 않음
+  if (didSeekOnPlay) return;
+  didSeekOnPlay = true;
+
+  const start = Math.max(0, loopStart);
+  if (start > 0) video.currentTime = start;
+});
+
+video.addEventListener("error", () => {
+  console.error("VIDEO ERROR:", video.error, video.currentSrc);
+});
+
+// ---------- main ----------
+function loadQuiz() {
+  const q = quizzes[index];
+
+  questionTitle.innerHTML = q.title ?? "문제";
+  progressText.textContent = `${index + 1} / ${quizzes.length}`;
+
+  // 버튼 상태
+  setDisabled(prevBtn, index === 0);
+  setDisabled(nextBtn, index === quizzes.length - 1);
+
+  // 영상은 항상 정지/리셋
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+
+  // 이미지도 리셋
+  img.removeAttribute("src");
+
+  // 타입별 분기
+  if (q.type === "image") {
+    // ✅ 이미지 모드
+    img.style.display = "block";
+    video.style.display = "none";
+
+    img.src = q.src;
+    img.dataset.full = q.src; // 확대용
+
+    // 반복/시크 무의미
+    loopStart = 0;
+    loopEnd = Infinity;
+
+  } else if (q.type === "video") {
+    // ✅ 영상 모드
+    img.style.display = "none";
+    video.style.display = "block";
+
+    // poster/volume/start/end
+    video.poster = q.poster || "";
+    video.volume = Number(q.volume ?? 1);
+
+    loopStart = Number(q.start ?? 0);
+    loopEnd = (q.end == null) ? Infinity : Number(q.end);
+
+    didSeekOnPlay = false;
+
+    video.src = q.src;
+    video.load();
+
+  } else {
+    console.warn("Unknown quiz type:", q.type);
+  }
+}
+
+// ---------- events ----------
 hintBtn.addEventListener("click", () => {
   pressFx(hintBtn);
-  hintText.textContent = quizzes[index].hint;
+  const q = quizzes[index];
+  hintText.innerHTML = q.hint ?? "힌트가 없어요.";
   openModal(hintModal);
 });
 
 answerBtn.addEventListener("click", () => {
   pressFx(answerBtn);
-  answerText.textContent = quizzes[index].answer;
+  const q = quizzes[index];
+  answerText.innerHTML = q.answer ?? "정답이 없어요.";
   openModal(answerModal);
 });
 
@@ -212,10 +339,12 @@ nextBtn.addEventListener("click", () => {
   loadQuiz();
 });
 
-// ✅ 이미지 클릭 → 확대 팝업
-imageFrame.addEventListener("click", () => {
+// ✅ 이미지 클릭 시 확대 모달
+img.addEventListener("click", () => {
+  if (!img.src) return;
+  zoomImg.src = img.dataset.full || img.src;
   openModal(imageModal);
 });
 
-// 초기 로드
+// init
 loadQuiz();

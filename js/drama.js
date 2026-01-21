@@ -3,6 +3,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/궁예.mp4",
+    thumbnail: "images/thumbnails/궁예.png",
     volume: 1,
     start: 74.0,      // (선택) 시작 시점(초)
     end: 80.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -13,6 +14,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/똥덩어리.mp4",
+    thumbnail: "images/thumbnails/베토벤바이러스.jpg",
     volume: 1,
     start: 76.0,      // (선택) 시작 시점(초)
     end: 81.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -23,6 +25,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/마스크걸.mp4",
+    thumbnail: "images/thumbnails/마스크걸.webp",
     volume: 1,
     start: 266.0,      // (선택) 시작 시점(초)
     end: 275.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -33,6 +36,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/미생.mp4",
+    thumbnail: "images/thumbnails/미생.jfif",
     volume: 0.3,
     start: 513.0,      // (선택) 시작 시점(초)
     end: 522.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -43,6 +47,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/사랑과 전쟁.mp4",
+    thumbnail: "images/thumbnails/사랑과전쟁.jpg",    
     volume: 0.6,
     start: 17.0,      // (선택) 시작 시점(초)
     end: 26.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -53,6 +58,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/사랑은 돌아오는거야.mp4",
+    thumbnail: "images/thumbnails/천국의계단.jpg",
     volume: 0.9,
     hint: "하늘길",
     answer: "천국의 계단",
@@ -61,6 +67,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/상속자들.mp4",
+    thumbnail: "images/thumbnails/상속자들.jpg",    
     volume: 0.9,
     start: 109.0,      // (선택) 시작 시점(초)
     end: 122.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -71,6 +78,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/선재업고.mp4",
+    thumbnail: "images/thumbnails/선재.webp",
     volume: 1,
     // start: 139.0,      // (선택) 시작 시점(초)
     // end: 151.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -81,6 +89,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/시크릿가든.mp4",
+    thumbnail: "images/thumbnails/시크릿가든.png",    
     volume: 1,
     start: 168.0,      // (선택) 시작 시점(초)
     end: 181.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -91,6 +100,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/쌈.mp4",
+    thumbnail: "images/thumbnails/쌈마이웨이.jpg",    
     volume: 1,
     start: 36.0,      // (선택) 시작 시점(초)
     end: 43.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -101,6 +111,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/우영우.mp4",
+    thumbnail: "images/thumbnails/우영우.jpg",    
     volume: 1,
     start: 0.0,      // (선택) 시작 시점(초)
     end: 9.8,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -111,6 +122,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/응답하라.mp4",
+    thumbnail: "images/thumbnails/응답하라.jpg",
     volume: 1,
     start: 3.0,      // (선택) 시작 시점(초)
     end: 18.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -121,6 +133,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/중증외상센터.mp4",
+    thumbnail: "images/thumbnails/중증외상센터.jpg",
     volume: 0.7,
     start: 31.0,      // (선택) 시작 시점(초)
     end: 54.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -131,6 +144,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/태양의후예.mp4",
+    thumbnail: "images/thumbnails/태양의후예.jpg",
     volume: 0.7,
     start: 118.0,      // (선택) 시작 시점(초)
     end: 132.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -141,6 +155,7 @@ const quizzes = [
   {
     title: "🎬 이 장면의 드라마 제목과 대사는?",
     video: "video/drama/SKY캐슬.mp4",
+    thumbnail: "images/thumbnails/스카이캐슬.jpg",    
     volume: 0.7,
     start: 969.0,      // (선택) 시작 시점(초)
     end: 985.0,        // (선택) 여기까지 반복, 없으면 반복 안 함
@@ -153,57 +168,70 @@ const quizzes = [
 
 let index = 0;
 
-// 반복 구간 상태
+// 반복 구간
 let loopStart = 0;
 let loopEnd = Infinity;
 
-// DOM
+// “처음 play 눌렀을 때 start로 점프” 플래그
+let didSeekOnPlay = false;
+
+/* =========================
+   DOM
+   ========================= */
 const video = document.getElementById("video");
 const progressText = document.getElementById("progressText");
 const questionTitle = document.getElementById("questionTitle");
 
 const hintBtn = document.getElementById("hintBtn");
 const answerBtn = document.getElementById("answerBtn");
+const lineBtn = document.getElementById("lineBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
-const lineBtn = document.getElementById("lineBtn");
-const lineModal = document.getElementById("lineModal");
-const lineText = document.getElementById("lineText");
 
 const hintModal = document.getElementById("hintModal");
 const answerModal = document.getElementById("answerModal");
+const lineModal = document.getElementById("lineModal");
+
 const hintText = document.getElementById("hintText");
 const answerText = document.getElementById("answerText");
+const lineText = document.getElementById("lineText");
 
+/* =========================
+   Helpers
+   ========================= */
 
 // 버튼 비활성화 표시
 function setDisabled(btn, disabled) {
+  if (!btn) return;
   btn.disabled = disabled;
   btn.classList.toggle("is-disabled", disabled);
 }
 
 // 모달
 function openModal(modalEl) {
+  if (!modalEl) return;
   modalEl.classList.add("is-open");
   modalEl.setAttribute("aria-hidden", "false");
 }
 function closeModal(modalEl) {
+  if (!modalEl) return;
   modalEl.classList.remove("is-open");
   modalEl.setAttribute("aria-hidden", "true");
 }
 
 // backdrop / 닫기 버튼 / ESC 공통 처리
 document.addEventListener("click", (e) => {
-  const closeTarget = e.target.getAttribute?.("data-close");
+  const closeTarget = e.target?.getAttribute?.("data-close");
   if (closeTarget) {
     const m = document.getElementById(closeTarget);
     if (m) closeModal(m);
   }
-  if (e.target.classList?.contains("modal-backdrop")) {
+  if (e.target?.classList?.contains("modal-backdrop")) {
     const modal = e.target.closest(".modal");
     if (modal) closeModal(modal);
   }
 });
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeModal(hintModal);
@@ -212,114 +240,127 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// 버튼 눌림 애니메이션(가벼운 액션)
-function pressFx(el){
+// 버튼 눌림 애니메이션
+function pressFx(el) {
+  if (!el?.animate) return;
   el.animate(
     [
       { transform: "translateY(-2px) scale(1)" },
       { transform: "translateY(0px) scale(0.98)" },
-      { transform: "translateY(-2px) scale(1)" }
+      { transform: "translateY(-2px) scale(1)" },
     ],
     { duration: 180, easing: "ease-out" }
   );
 }
 
+/* =========================
+   Video Loop
+   ========================= */
+
 // ✅ 특정 구간만 반복 (end가 있으면 반복)
 function handleLoop() {
-  if (Number.isFinite(loopEnd) && video.currentTime >= loopEnd) {
+  if (!Number.isFinite(loopEnd)) return;
+  if (video.currentTime >= loopEnd) {
     video.currentTime = loopStart;
     video.play().catch(() => {});
   }
 }
+
 video.addEventListener("timeupdate", handleLoop);
 
-// 문제 로드: ✅ 자동으로 start부터 재생 (A안)
+// 디버깅용: 에러 로그 (문제 생기면 콘솔 확인)
+video.addEventListener("error", () => {
+  console.error("VIDEO ERROR", video.error, video.currentSrc);
+});
+
+/* =========================
+   Load Quiz
+   ========================= */
+
 function loadQuiz() {
   const q = quizzes[index];
 
-  questionTitle.textContent = q.title;
-  progressText.textContent = `${index + 1} / ${quizzes.length}`;
+  // UI
+  if (questionTitle) questionTitle.innerHTML = q.title;
+  if (progressText) progressText.textContent = `${index + 1} / ${quizzes.length}`;
 
-  // 반복 구간
+  // 비디오 세팅
+  video.pause();
+  video.currentTime = 0;          // 프레임 초기화 (선택)
+  video.poster = q.thumbnail || "";
+  video.src = q.video;
+  video.load();
+
+  // 볼륨
+  video.volume = Number(q.volume ?? 1);
+
+  // 구간
   loopStart = Number(q.start ?? 0);
   loopEnd = (q.end == null) ? Infinity : Number(q.end);
 
-  // 비디오 교체
-video.pause();
-video.currentTime = 0; // 선택
-video.src = q.video;
-video.load();
+  // 새 문제에서는 다시 “첫 play에서만 점프”
+  didSeekOnPlay = false;
 
-  // ✅ 볼륨 적용 (기본값 1)
-  video.volume = Number(q.volume ?? 1);
-
-const seekOnly = () => {
-  // start가 duration보다 크면 보정
-  const safeStart = Math.max(0, loopStart);
-  video.currentTime = safeStart;
-
-  // ✅ 자동재생 제거
-  // video.play().catch(() => {});
-};
-
-
-
-if (video.readyState >= 1) seekOnly();
-else video.addEventListener("loadedmetadata", seekOnly, { once: true });
-
-
+  // 버튼 상태
   setDisabled(prevBtn, index === 0);
   setDisabled(nextBtn, index === quizzes.length - 1);
 }
 
-// 버튼 이벤트
-hintBtn.addEventListener("click", () => {
+/**
+ * 포스터를 유지하려면 로드 시점에 currentTime을 건드리면 안 됨.
+ * 대신 사용자가 ▶ 눌렀을 때 1번만 start로 점프.
+ */
+video.addEventListener("play", () => {
+  if (didSeekOnPlay) return;
+  didSeekOnPlay = true;
+
+  // start가 0이면 굳이 점프 안 해도 됨
+  const start = Math.max(0, loopStart);
+  if (start > 0) video.currentTime = start;
+});
+
+/* =========================
+   Button Events
+   ========================= */
+
+hintBtn?.addEventListener("click", () => {
   pressFx(hintBtn);
-  hintText.textContent = quizzes[index].hint;
+  const q = quizzes[index];
+  hintText.innerHTML = q.hint ?? "힌트가 없어요.";
   openModal(hintModal);
 });
 
-lineBtn.addEventListener("click", () => {
-  pressFx(lineBtn);
-  const q = quizzes[index];
-
-  // 대사가 없을 수도 있으니 방어
-  lineText.innerHTML = (q.line && String(q.line).trim().length > 0)
-    ? q.line
-    : "대사가 등록되지 않았어요.";
-
-  openModal(lineModal);
-});
-
-
-answerBtn.addEventListener("click", () => {
+answerBtn?.addEventListener("click", () => {
   pressFx(answerBtn);
-  // 줄바꿈 지원하려면 innerHTML + <br> 사용
-  answerText.innerHTML = quizzes[index].answer;
+  const q = quizzes[index];
+  answerText.innerHTML = q.answer ?? "정답이 없어요.";
   openModal(answerModal);
 });
 
-hintBtn.addEventListener("click", () => {
-  pressFx(hintBtn);
-  hintText.innerHTML = quizzes[index].hint; // ✅ 줄바꿈 OK
-  openModal(hintModal);
+lineBtn?.addEventListener("click", () => {
+  pressFx(lineBtn);
+  const q = quizzes[index];
+  lineText.innerHTML = (q.line && String(q.line).trim().length > 0)
+    ? q.line
+    : "대사가 등록되지 않았어요.";
+  openModal(lineModal);
 });
 
-prevBtn.addEventListener("click", () => {
+prevBtn?.addEventListener("click", () => {
   if (index <= 0) return;
   pressFx(prevBtn);
   index--;
   loadQuiz();
 });
 
-
-
-nextBtn.addEventListener("click", () => {
+nextBtn?.addEventListener("click", () => {
   if (index >= quizzes.length - 1) return;
   pressFx(nextBtn);
   index++;
   loadQuiz();
 });
 
-// 초기 실행
+/* =========================
+   Init
+   ========================= */
 loadQuiz();
