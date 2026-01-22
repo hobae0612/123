@@ -57,16 +57,16 @@ const quizzes = [
     {
     type: "image",
     title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
-    src: "images/아따아따.jpg",
-    hint: "아뜨! 아뜨!",
-    answer: "아따아따",
-    line: "단비꺼어어어!!!!!!!"
+    src: "images/보노보노.jpg",
+    hint: "어린왕자 jp.ver",
+    answer: "보노보노",
+    line: "헛소리 하지마 인마!"
   },
     {
     type: "image",
     title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
     src: "images/원피스.webp",
-    hint: "김종민 인생곡",
+    hint: "김종민 인생곡이<br>오프닝 곡",
     answer: "원피스",
     line: "제ー하하하하하하하하하ー!!"
   },
@@ -82,7 +82,7 @@ const quizzes = [
     type: "image",
     title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
     src: "images/젠이츠.jpg",
-    hint: "번개의호흡",
+    hint: "우마이",
     answer: "귀멸의 칼날",
     line: "카미나리노코큐<br>이치노카타<br>헤키레키잇센!"
   },
@@ -111,13 +111,13 @@ const quizzes = [
     src: "images/타마마.jpg",
     hint: "타마마는 남성",
     answer: "개구리 중사 케로로",
-    line: "타마마 임팩트!!"
+    line: "중사님~ 타마마예요~<br>타마마 임팩트!!"
   },
       {
     type: "image",
     title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
     src: "images/탄지로.jpg",
-    hint: "꺽쇠 까마귀",
+    hint: "아카자여 이리와서<br>오목 한 판 두자꾸나",
     answer: "귀멸의 칼날",
     line: "탄지로! 탄지로!<br> 쯔기노 바쇼와 <br> 남남동!! 남남동!!"
   },
@@ -133,7 +133,7 @@ const quizzes = [
     type: "image",
     title: "이 캐릭터가 나오는 애니 제목은 무엇일까요?<br>(성대모사까지 해야 정답으로 인정)",
     src: "images/흰둥이.webp",
-    hint: "수컷입니다. 귀여워해 주세요.",
+    hint: "짱구와 오징어의 차이는?",
     answer: "짱구는 못말려",
     line: "왕왕왕"
   },
