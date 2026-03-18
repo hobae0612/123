@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <!-- Animated Background Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  
+  <div class="container">
+    <div class="card">
+      <div class="profile-img">
+        <div>👋</div>
+      </div>
+      <h1 class="title">환영합니다</h1>
+      <p class="subtitle">
+        이곳은 포트폴리오 메인 페이지입니다.<br>
+        아래 버튼을 눌러 다음 페이지로 이동해보세요.
+      </p>
+      
+      <div class="btn-group">
+        <a href="church.html" class="btn btn-church">
+          <span>
+            <svg style="width:22px;height:22px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+            교회
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add 3D tilt effect to the card
+    const card = document.querySelector('.card');
+    document.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 768) return;
+      
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
+      card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-8px)`;
+    });
+
+    document.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)`;
+    });
+  </script>
+</body>
+</html>

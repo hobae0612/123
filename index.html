@@ -1,143 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>조치원성결교회 청년부겨울MT</title>
-
-  <!-- challenge.css 재사용 -->
-  <link rel="stylesheet" href="css/challenge.css" />
-
-  <!-- index 전용 보정(필요한 것만) -->
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=portfolio.html">
+  <title>포트폴리오로 이동중...</title>
+  <script>
+    window.location.replace("portfolio.html");
+  </script>
   <style>
-    .home-wrap{
-      min-height: calc(100vh - 76px);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding: 0 26px 40px;
-    }
-    .home-card{
-      width: min(520px, 92vw);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.03));
-      border: 1px solid var(--stroke);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      padding: 22px;
-    }
-    .home-title{
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      font-size: 28px;
-      letter-spacing: -1.3px;
-      font-weight: bold;
-      opacity: 0.95;
-    }
-    .home-sub{
-      margin: 10px 0 18px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-    .menu-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    .btn.big{
-      padding: 16px 14px;
-    }
-    .btn .right{
-      opacity: .9;
-      font-weight: 800;
-    }
-    .chips{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .chip{
-      font-size: 12px;
-      color: rgba(255,255,255,0.86);
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
-      padding: 8px 10px;
-      border-radius: 999px;
     }
   </style>
 </head>
-
 <body>
-
-<header class="topbar">
-  <div class="brand">
-    <span class="dot"></span>
-    <span>조치원성결교회 청년부겨울MT</span>
+  <div style="text-align: center;">
+    <p>포트폴리오 페이지로 이동합니다...</p>
+    <a href="portfolio.html" style="color: #60a5fa; text-decoration: none;">수동으로 이동하기</a>
   </div>
-
-  <div class="status">
-    <span>진행할 퀴즈의 카테고리를 선택해주세요</span>
-  </div>
-</header>
-
-<main class="home-wrap">
-  <section class="home-card">
-    <div class="home-title">세상의 것들도 잠깐 그리며</div>
-    <p class="home-sub">
-      카테고리를 선택하면 바로 퀴즈가 시작됩니다.<br/>
-    </p>
-
-    <div class="menu-grid">
-      <a class="btn btn-primary big" href="challenge.html" data-press>
-        <span style="display:flex;align-items:center;gap:10px;">
-          <span class="btn-ic">⚡</span> 챌린지
-        </span>
-        <span class="right">START ▶</span>
-      </a>
-
-      <a class="btn btn-accent big" href="drama.html" data-press>
-        <span style="display:flex;align-items:center;gap:10px;">
-          <span class="btn-ic">🎬</span> 드라마
-        </span>
-        <span class="right">START ▶</span>
-      </a>
-
-      <a class="btn big" href="animation.html" data-press
-         style="border-color: rgba(32,201,151,0.35);
-                background: linear-gradient(180deg, rgba(32,201,151,0.20), rgba(255,255,255,0.04));">
-        <span style="display:flex;align-items:center;gap:10px;">
-          <span class="btn-ic">🐉</span> 애니메이션
-        </span>
-        <span class="right">START ▶</span>
-      </a>
-    </div>
-
-    <div class="chips">
-      <span class="chip">💡 힌트/정답 팝업</span>
-      <span class="chip">⟲ 이전/다음</span>
-      <span class="chip">🎞 로컬 MP4</span>
-    </div>
-  </section>
-</main>
-
-<script>
-  // 버튼 클릭시 살짝 튀는 액션(링크에도 적용)
-  function pressFx(el){
-    el.animate(
-      [
-        { transform: "translateY(-2px) scale(1)" },
-        { transform: "translateY(0px) scale(0.98)" },
-        { transform: "translateY(-2px) scale(1)" }
-      ],
-      { duration: 180, easing: "ease-out" }
-    );
-  }
-
-  document.querySelectorAll("[data-press]").forEach(el => {
-    el.addEventListener("click", () => pressFx(el));
-  });
-</script>
-
 </body>
 </html>
